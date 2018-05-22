@@ -112,12 +112,15 @@ def run_test_practice_problem3():
              ]
     # 14th test:
     big_list = []
-    for k in range(888, 1888):
+    for k in range(888,1000 ):
         big_list.append(k)
     tests.append(st.SimpleTestCase(practice_problem3,
                                    [888, 1000,
                                     - math.sqrt(2) - 0.00000000001],
                                    big_list))
+
+
+    #actually good test
 
     # ------------------------------------------------------------------
     # Run the 14 tests in the   tests   list constructed above.
@@ -137,6 +140,23 @@ def run_test_practice_problem3():
 
 
 def practice_problem3(start, n, threshold):
+    list = []
+    x = start
+    k=0
+    while True:
+        sum = math.cos(x)+math.sin(x)
+        if sum > threshold:
+            list = list + [x]
+
+            k = k + 1
+        x = x+ 1
+        if k == n:
+            break
+    return list
+
+
+
+
     """
     What comes in:
       -- An integer:  start
