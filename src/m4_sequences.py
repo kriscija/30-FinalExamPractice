@@ -109,6 +109,11 @@ def run_test_practice_problem4a():
 
 
 def practice_problem4a(sequence):
+    list = []
+    for k in range(len(sequence)-1):
+        if sequence[k] ==sequence[k+1]:
+            list = list + [k]
+    return list
     """
     What comes in: A non-empty sequence.
     What goes out: Returns a list of integers,
@@ -134,7 +139,7 @@ def practice_problem4a(sequence):
       :type sequence: list | tuple | string
     """
     ####################################################################
-    # TODO: 2. Implement and test this function.
+    # done
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -180,6 +185,25 @@ def run_test_practice_problem4b():
 
 
 def practice_problem4b(sequence):
+    r=sequence[0]
+    if len(sequence)%2==0:
+        for k in range(len(sequence)//2):
+            if sequence[0+(2*k)] > r:
+                r = sequence[0+(2*k)]
+        return r
+    else:
+        for k in range((len(sequence)+1)//2):
+            if sequence[0+(2*k)] > r:
+                r = sequence[0+(2*k)]
+        return r
+
+
+
+
+
+
+
+
     """
     What comes in:
       A sequence of numbers, where the length of the sequence >= 2.
@@ -197,7 +221,7 @@ def practice_problem4b(sequence):
       :type sequence: (list | tuple) of (float | int)
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # doneTODO: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -265,6 +289,21 @@ def run_test_practice_problem4c():
 
 
 def practice_problem4c(points):
+
+    for k in range(len(points)):
+        test = points[k]
+        if is_prime(test.x) == True:
+            if is_prime(test.y) == True:
+                swa = test.x
+                test.x=test.y
+                test.y = swa
+                return test
+
+        else:
+            return 'Not found'
+
+
+
     """
     What comes in:  A tuple of rg.Points, each of whose coordinates
       is an integer.
@@ -342,6 +381,15 @@ def run_test_practice_problem4d():
 
 
 def practice_problem4d(sequence):
+    count = 0
+    for k in range(len(sequence)-1):
+        if is_prime(sequence[k]) == True:
+            if not sequence[k] == sequence[k+1]:
+                if is_prime(sequence[k+1]) == True:
+                    count = count + sequence[k]
+    return count
+
+
     """
     What comes in: A non-empty sequence of integers.
     What goes out: An integer that is the sum of all the items
@@ -391,7 +439,7 @@ def practice_problem4d(sequence):
       :rtype: int
     """
     ####################################################################
-    # TODO: 5. Implement and test this function.
+    # Done
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)

@@ -73,6 +73,14 @@ def run_test_integers():
 
 
 def integers(sequence_of_sequences):
+    list =[]
+    for k in range(len(sequence_of_sequences)):
+        seq1 = sequence_of_sequences[k]
+        for r in range(len(seq1)):
+            if type(seq1[r]) is int:
+                list = list + [seq1[r]]
+    return list
+
     """
     Returns a new list that contains all the integers
     in the subsequences of the given sequence, in the order that they
@@ -95,7 +103,7 @@ def integers(sequence_of_sequences):
       :rtype: list of int
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # doneTODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     ####################################################################
