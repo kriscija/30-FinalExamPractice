@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  LOOPS WITHIN LOOPS, SEQUENCES and MUTATION  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Joe Krisciunas
+"""  # Done
 
 
 def main():
@@ -30,6 +30,15 @@ def run_test_zero_changer():
     print('  Expected:', expected1)
     print('  Actual:  ', test1)
 
+    # Test 1:
+    test1 = ([], [], [0,0,0], [])
+    expected1 = ([], [], [1,2,3], [])
+    zero_changer(test1)
+    print()
+    print('Test 1:')
+    print('  Expected:', expected1)
+    print('  Actual:  ', test1)
+
     # ------------------------------------------------------------------
     # TODO: 2. Write at least 2 additional tests for the  zero_changer   function.
     #   Try do do some unexpected things like empty lists or an empty tuple.
@@ -37,6 +46,16 @@ def run_test_zero_changer():
 
 
 def zero_changer(tuple_of_lists):
+    count = 1
+    tup = tuple_of_lists
+    for k in range(len(tup)):
+        l1 = tup[k]
+        for r in range(len(l1)):
+            if l1[r] == 0:
+                l1[r] = count
+                count = count + 1
+
+
     """
     What comes in:  A TUPLE of LISTs,
                     where the interior lists contain only integers.
