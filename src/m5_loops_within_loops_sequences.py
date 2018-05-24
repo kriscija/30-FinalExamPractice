@@ -169,6 +169,16 @@ def run_test_big_letters():
 
 
 def big_letters(sequence_of_sequences):
+    fin = ''
+    for k in range(len(sequence_of_sequences)):
+        inner = sequence_of_sequences[k]
+        for r in range(len(inner)):
+            if type(inner) is str:
+                if inner[r].isupper():
+                    fin = fin + inner[r]
+
+    return fin
+
     """
     Returns a new STRING that contains all the upper-case letters
     in the subsequences of the given sequence that are strings,
@@ -197,8 +207,8 @@ def big_letters(sequence_of_sequences):
     Precondition:  the given argument is a sequence of sequences.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
-    #   Note that you should write its TEST function first (above).
+    # doTODO: 5. Implement and test this function.
+    #  Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     ####################################################################
     # IMPORTANT:
